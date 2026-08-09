@@ -1,0 +1,103 @@
+/* ==========================================================================
+   ORGAN DETAILS PAGE RESPONSIVE STYLES
+   ========================================================================== */
+
+.organ_details_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+.organ_details_header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.organ_pill {
+  display: inline-block;
+  background: #0284c7;
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.organ_details_header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.organ_details_header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.organ_details_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.organ_detail_card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.organ_detail_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: #38bdf8;
+}
+
+.card_header_bar {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+}
+
+.organ_badge_icon {
+  font-size: 2rem;
+}
+
+.card_header_bar h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.liver_bar { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+.heart_bar { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); }
+.kidney_bar { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); }
+.lungs_bar { background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); }
+.intestine_bar { background: linear-gradient(135deg, #d97706 0%, #b45309 100%); }
+.pancreas_bar { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); }
+
+.card_body {
+  padding: 24px;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.card_body p:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 868px) {
+  .organ_details_grid {
+    grid-template-columns: 1fr;
+  }
+}

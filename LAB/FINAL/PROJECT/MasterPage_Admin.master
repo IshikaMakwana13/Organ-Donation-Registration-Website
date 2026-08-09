@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_Admin.master.cs" Inherits="MasterPage_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Admin Portal | Ishika Organ Donation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="S_Admin_Page.css?v=2" rel="stylesheet" />
+</head>
+<body class="admin_body">
+    <form id="form1" runat="server">
+        <header class="admin_header">
+            <div class="admin_header_inner">
+                <!-- Top Utility Bar: Founder Info + Sign Out -->
+                <div class="admin_top_bar">
+                    <div class="founder_brand">
+                        <div class="founder_avatar_ring">
+                            <img src="Pictures/Admin/founder_ishika.jpg" alt="Founder Ishika Makwana" class="founder_avatar" />
+                        </div>
+                        <div class="founder_text">
+                            <span class="founder_badge">FOUNDER &amp; HEAD ADMIN</span>
+                            <h2 class="founder_title">ISHIKA MAKWANA</h2>
+                        </div>
+                    </div>
+
+                    <div class="admin_actions">
+                        <a href="1_SIGN_IN.aspx" class="admin_signout_btn">
+                            <span class="signout_icon">&#x27A4;</span>
+                            <span class="signout_text">SIGN OUT</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Responsive Navigation Pills -->
+                <nav class="admin_nav_bar">
+                    <a href="m_Admin_Dashboard.aspx" class="nav_pill" id="nav_dash">
+                        <span class="pill_icon">&#x1F4CA;</span>
+                        <span>DASHBOARD</span>
+                    </a>
+                    <a href="m_donor.aspx" class="nav_pill" id="nav_donor">
+                        <span class="pill_icon">&#x1F464;</span>
+                        <span>DONORS</span>
+                    </a>
+                    <a href="m_patient.aspx" class="nav_pill" id="nav_patient">
+                        <span class="pill_icon">&#x1F3E5;</span>
+                        <span>PATIENTS</span>
+                    </a>
+                    <a href="m_msg.aspx" class="nav_pill" id="nav_msg">
+                        <span class="pill_icon">&#x2709;&#xFE0F;</span>
+                        <span>MESSAGES</span>
+                    </a>
+                    <a href="m_signup.aspx" class="nav_pill" id="nav_signup">
+                        <span class="pill_icon">&#x1F465;</span>
+                        <span>SIGNUPS</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="admin_main_content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+    </form>
+
+    <script type="text/javascript">
+        // Highlight active navigation tab based on current page URL
+        document.addEventListener('DOMContentLoaded', function () {
+            var path = window.location.pathname.toLowerCase();
+            var links = document.querySelectorAll('.admin_nav_bar .nav_pill');
+            links.forEach(function (link) {
+                var href = link.getAttribute('href').toLowerCase();
+                if (path.indexOf(href) !== -1 || (href === 'm_admin_dashboard.aspx' && (path.endsWith('/') || path.indexOf('m_loader.aspx') !== -1))) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.admin_body {
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   ADMIN HEADER & RESPONSIVE NAVIGATION
+   ========================================================================== */
+.admin_header {
+  background: linear-gradient(135deg, #090d16 0%, #0f172a 40%, #1e293b 100%);
+  border-bottom: 3px solid #f5dd20;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 100%;
+  padding: 20px 0 15px 0;
+  z-index: 100;
+}
+
+.admin_header_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top Bar: Founder Details + Sign Out */
+.admin_top_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.founder_brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.founder_avatar_ring {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #f5dd20, #f59e0b, #e11d48);
+  box-shadow: 0 0 15px rgba(245, 221, 32, 0.4);
+  flex-shrink: 0;
+}
+
+.founder_avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.founder_text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.founder_badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #f5dd20;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.founder_title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Sign Out Button */
+.admin_signout_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff !important;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin_signout_btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+  color: #ffffff !important;
+}
+
+.signout_icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.admin_signout_btn:hover .signout_icon {
+  transform: translateX(3px);
+}
+
+/* Responsive Navigation Bar */
+.admin_nav_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 18px;
+}
+
+.nav_pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e2e8f0 !important;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.nav_pill:hover {
+  background: #f5dd20;
+  color: #090d16 !important;
+  border-color: #f5dd20;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 221, 32, 0.4);
+  font-weight: 700;
+}
+
+.nav_pill.active {
+  background: #f5dd20;
+  color: #090d16 !important;
+  border-color: #f5dd20;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(245, 221, 32, 0.45);
+}
+
+.pill_icon {
+  font-size: 15px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .admin_header {
+    padding: 15px 0 12px 0;
+  }
+  .admin_top_bar {
+    justify-content: center;
+    text-align: center;
+  }
+  .founder_brand {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .founder_avatar_ring {
+    width: 60px;
+    height: 60px;
+  }
+  .founder_title {
+    font-size: 17px;
+  }
+  .admin_actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .admin_nav_bar {
+    gap: 8px;
+  }
+  .nav_pill {
+    padding: 8px 14px;
+    font-size: 12.5px;
+    border-radius: 8px;
+  }
+}
+
+/*HIT COUNTER START*/
+#mainhit {
+  height: 252px;
+  width: 100%;
+  background-image: url("Pictures/Admin/output-onlinepngtools.png");
+  background-repeat: round;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.hit_counter {
+  height: 250px;
+  width: 400px;
+  /* background-image: radial-gradient(white, #f6f8bf, #c1fdff, #fbfbfb);  */
+  margin-left: 35%;
+}
+
+/*TOTAL DISPLAY START */
+#totalsignup {
+  height: 252px;
+  width: 100%;
+  background-image: url("Pictures/Admin/signup.png");
+  background-repeat: round;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.ttl_signup {
+  height: 250px;
+  width: 400px;
+  /*  background-image: radial-gradient(white, #f6f8bf, #c1fdff, #fbfbfb);  */
+  margin-left: 35%;
+}
+
+#totalmsg {
+  height: 252px;
+  width: 100%;
+  background-image: url("Pictures/Admin/msgs.png");
+  background-repeat: round;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.ttl_msg {
+  height: 250px;
+  width: 400px;
+  /* background-image: radial-gradient(white, #f6f8bf, #c1fdff, #fbfbfb); */
+  margin-left: 35%;
+}
+
+#ttldonor {
+  height: 252px;
+  width: 100%;
+  background-image: url("Pictures/Admin/orgn-safeimagekit.jpeg");
+  background-repeat: round;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.ttl_donor {
+  height: 250px;
+  width: 400px;
+  /* background-image: radial-gradient(white, #f6f8bf, #c1fdff, #fbfbfb);  */
+  margin-left: 35%;
+}
+
+#ttlpatient {
+  height: 252px;
+  width: 100%;
+  background-image: url("Pictures/Admin/AdobeStock_136041571-safeimagekit.jpeg");
+  background-repeat: round;
+  background-position: center inherit;
+  background-attachment: fixed;
+}
+
+.ttl_patient {
+  height: 250px;
+  width: 400px;
+  /* background-image: radial-gradient(white, #f6f8bf, #c1fdff, #fbfbfb);  */
+  margin-left: 35%;
+}
+
+/*HIT COUNTER END*/
+
+#last {
+  color: #3498db;
+  margin: 15px 0 10px 38%;
+  font-size: 1rem;
+  font-weight: 300;
+}

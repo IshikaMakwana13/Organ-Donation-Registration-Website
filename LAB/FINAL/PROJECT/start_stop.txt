@@ -1,0 +1,9 @@
+START : 
+
+"C:\Program Files\IIS Express\iisexpress.exe" /path:"d:\ISHIKA\PROJECT\ORGAN DONATION WEBSITE\LAB\FINAL\PROJECT" /port:8080 /clr:v4.0
+
+----------------------------------------------------------
+
+
+STOP :
+taskkill /IM iisexpress.exe /F
